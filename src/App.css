@@ -227,6 +227,10 @@ input[type="range"]::-webkit-slider-thumb {
   user-select: none;
 }
 
+.contribute a {
+  color: white;
+}
+
 .credits {
   position: absolute;
   bottom: 0;

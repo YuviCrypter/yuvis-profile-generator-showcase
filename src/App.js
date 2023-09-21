@@ -93,7 +93,13 @@ function App() {
           </div>
 
           <div className="contribute">
-            You can contribute to this Showcase on GitHub <a>here</a>
+            You can contribute to this Showcase on GitHub{" "}
+            <a
+              href="https://github.com/YuviCrypter/yuvis-profile-generator-showcase"
+              target="_blank"
+            >
+              here
+            </a>
           </div>
 
           <div className="code">
