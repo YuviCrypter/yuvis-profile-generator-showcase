@@ -1,7 +1,9 @@
+// Importing necessary modules and components
 import "./App.css";
 import { useState } from "react";
 import { Profile, randomColor, randomValue } from "yuvis-profile-generator";
 
+// Array of background colors
 const bgColors = [
   { first: "#9f1d35", second: "#440001" },
   { first: "rgb(127, 62, 211)", second: "rgb(0, 23, 70)" },
@@ -9,7 +11,9 @@ const bgColors = [
   { first: "#0047AB", second: "#061148" },
 ];
 
+// Main App component
 function App() {
+  // State variables using the useState hook
   const [selectedBG, setSelectedBG] = useState(1);
   const [selectedBorder, setSelectedBorder] = useState(1);
   const [resolution, setResolution] = useState(5);
@@ -18,6 +22,7 @@ function App() {
   const [code, setCode] = useState("");
   const [color, setColor] = useState("white");
 
+  // Rendering the main container with dynamic styles based on selected background
   return (
     <div
       id="logo-container"
@@ -26,6 +31,7 @@ function App() {
         backgroundImage: `radial-gradient(circle at center center,${bgColors[selectedBG].first},${bgColors[selectedBG].second})`,
       }}
     >
+      {/* Profile container */}
       <div
         className="profile"
         onClick={() => {
@@ -33,6 +39,7 @@ function App() {
           setCode(randomValue(resolution));
         }}
       >
+        {/* Rendering the Profile component with various props */}
         <Profile
           length={400}
           resolution={resolution}
@@ -45,6 +52,7 @@ function App() {
         />
       </div>
 
+      {/* Toggle button for hiding/showing tools */}
       <div className="hide">
         <button
           onClick={() => {
@@ -63,10 +71,12 @@ function App() {
         </button>
       </div>
 
+      {/* Conditional rendering of tools based on 'hidden' state */}
       {hidden ? (
         <></>
       ) : (
         <>
+          {/* Credits section */}
           <div className="credits">
             <div>
               Profile Generator package used
@@ -92,6 +102,7 @@ function App() {
             </a>
           </div>
 
+          {/* Contribution link */}
           <div className="contribute">
             You can contribute to this Showcase on GitHub{" "}
             <a
@@ -102,6 +113,7 @@ function App() {
             </a>
           </div>
 
+          {/* Input field for code */}
           <div className="code">
             <input
               type="text"
@@ -113,6 +125,7 @@ function App() {
             ></input>
           </div>
 
+          {/* Slider for selecting resolution */}
           <div className="lengthSelector">
             <p>{resolution}</p>
             <input
@@ -126,6 +139,7 @@ function App() {
             ></input>
           </div>
 
+          {/* Shape selector */}
           <div className="shapeSelector">
             <p>Shape : </p>
             <div
@@ -144,6 +158,7 @@ function App() {
             </div>
           </div>
 
+          {/* Border selector */}
           <div className="borderSelector">
             <p>Border:</p>
             <div
@@ -165,6 +180,7 @@ function App() {
             </div>
           </div>
 
+          {/* Color picker */}
           <div className="colorPicker">
             <p>Select Logo Color:</p>
             <input
@@ -174,6 +190,7 @@ function App() {
             ></input>
           </div>
 
+          {/* Background selector */}
           <div className="bgselector">
             <p>Set Background</p>
             <div>
